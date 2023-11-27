@@ -24,7 +24,13 @@ function App() {
   }, [themeState, theme]);
 
   return (
-    <div className="bg-[#F3F2F9] dark:bg-[#2B2B33] min-h-screen h-full w-full">
+    <div
+      className={`bg-transition ${
+        themeState === 'dark'
+          ? 'bg-[#2B2B33] dark:bg-[#2B2B33] transition-bg duration-500 ease-in-out'
+          : 'bg-[#F3F2F9] dark:bg-[#2B2B33] transition-bg duration-500 ease-in-out'
+      } min-h-screen h-full w-full`}
+    >
       <Navbar />
       <Router />
     </div>

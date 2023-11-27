@@ -26,8 +26,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed z-[5] top-24 left-0 right-0">
-      <div className="relative z-50 py-0 pr-24 pl-[88px] flex justify-between items-center overflow-hidden">
+    <header className="fixed z-[5] top-0 left-0 right-0">
+      <div className="h-20 px-24 flex justify-between items-center overflow-hidden bg-[#F3F2F9] dark:bg-[#2B2B33]">
         <img src="/assets/Logo.svg" alt="logo" />
         <div className="flex items-center justify-between gap-6">
           <div className="flex items-center gap-1 border-[1px] border-[#0000] hover:border-[#4c4c5c] p-2 rounded-r-full rounded-l-full duration-500 ease-in-out group">
@@ -106,8 +106,8 @@ const Navbar = () => {
             <div
               className={`${
                 navToggle
-                  ? 'rotate-45 duration-500'
-                  : 'duration-500 hover-plus-div'
+                  ? 'rotate-45 duration-[0.4s]'
+                  : 'duration-[0.4s] hover-plus-div'
               } absolute top-0 h-8 w-8 `}
             >
               <div className="border-2 border-[#606887] dark:border-[#f3f2f9] rounded-[10px] w-[9px] h-8 absolute left-1/2 transform -translate-x-[50%]" />
@@ -120,58 +120,47 @@ const Navbar = () => {
       <div
         className={`${
           navToggle ? 'flex animate-navdrop' : 'hidden'
-        } flex-col items-center gap-6 overflow-hidden mr-60 mt-16 bg-[#F3F2F9] dark:bg-[#2B2B33] w-screen h-screen`}
+        } flex-col items-center justify-center gap-6 overflow-hidden mr-60 bg-[#F3F2F9] dark:bg-[#2B2B33] w-screen h-[calc(100vh-80px)]`}
       >
-        <h5 className="text-2xl font-medium text-[#f3f2f9]">
-          sharlee/charles bruyerre
-        </h5>
-
-        <div className="flex flex-col w-auto">
-          <nav>
-            <ol className="list-decimal text-white">
-              <li>
-                <div onClick={handleNav}>
-                  <Link
-                    to={'/'}
-                    className="text-7xl uppercase font-bold text-[#f3f2f9]"
-                  >
-                    Home
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div onClick={handleNav}>
-                  <Link
-                    to={'/work'}
-                    className="text-7xl uppercase font-bold text-[#f3f2f9]"
-                  >
-                    Work
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div onClick={handleNav}>
-                  <Link
-                    to={'/about'}
-                    className="text-7xl uppercase font-bold text-[#f3f2f9]"
-                  >
-                    About
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div onClick={handleNav}>
-                  <Link
-                    to={'/contact'}
-                    className="text-7xl uppercase font-bold text-[#f3f2f9]"
-                  >
-                    Contact
-                  </Link>
-                </div>
-              </li>
-            </ol>
-          </nav>
-        </div>
+        <nav className="flex flex-col w-auto">
+          <ul className="text-[#606887] dark:text-white flex flex-col gap-3">
+            <li>
+              <div onClick={handleNav}>
+                <Link to={'/'} className="text-4xl uppercase font-bold">
+                  Home
+                </Link>
+              </div>
+            </li>
+            <li>
+              <div onClick={handleNav}>
+                <Link to={'/work'} className="text-4xl uppercase font-bold">
+                  Work
+                </Link>
+              </div>
+            </li>
+            <li>
+              <div onClick={handleNav}>
+                <Link to={'/about'} className="text-4xl uppercase font-bold">
+                  About
+                </Link>
+              </div>
+            </li>
+            <li>
+              <div onClick={handleNav}>
+                <Link to={'/contact'} className="text-4xl uppercase font-bold">
+                  Contact
+                </Link>
+              </div>
+            </li>
+            <li>
+              <div onClick={handleNav}>
+                <Link to={'/projects'} className="text-4xl uppercase font-bold">
+                  Projects
+                </Link>
+              </div>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
