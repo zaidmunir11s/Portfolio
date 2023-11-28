@@ -116,3 +116,15 @@
 .transition-bg {
   transition-property: background-color;
 }
+
+.masonry_gap {
+  gap: 24px !important;
+}
+
+.masonry_gap div {
+  gap: 24px !important;
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
